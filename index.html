@@ -5,29 +5,57 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    .form-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
     }
     input {
-      margin-bottom: 10px;
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .info-text {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <h1>Fake Authentication</h1>
-  
-  <div id="loginForm">
-    <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username" value="defaultuser"><br>
-    <input type="password" id="password" placeholder="Password" value="defaultpassword"><br>
-    <button onclick="login()">Login</button>
-  </div>
-  
-  <div id="loggedInSection" style="display: none;">
-    <h2>Welcome, <span id="loggedInUsername"></span>!</h2>
-    <input type="password" id="newPassword" placeholder="New Password"><br>
-    <button onclick="changePassword()">Change Password</button>
-    <button onclick="logout()">Logout</button>
-    <p id="passwordChangeMessage"></p>
+  <div class="form-container">
+    <h1>Fake Authentication</h1>
+    
+    <div id="loginForm">
+      <h2>Login</h2>
+      <p class="info-text">Use username "defaultuser" and password "defaultpassword"</p>
+      <input type="text" id="username" placeholder="Username"><br>
+      <input type="password" id="password" placeholder="Password"><br>
+      <button onclick="login()">Login</button>
+    </div>
+    
+    <div id="loggedInSection" style="display: none;">
+      <h2>Welcome, <span id="loggedInUsername"></span>!</h2>
+      <input type="password" id="newPassword" placeholder="New Password"><br>
+      <button onclick="changePassword()">Change Password</button>
+      <button onclick="logout()">Logout</button>
+      <p id="passwordChangeMessage"></p>
+    </div>
   </div>
   
   <script>
