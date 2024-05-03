@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fake Authentication</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fake Authentication</h1>
+  
+  <div id="loginForm">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" value="defaultuser"><br>
+    <input type="password" id="password" placeholder="Password" value="defaultpassword"><br>
+    <button onclick="login()">Login</button>
+  </div>
+  
+  <div id="loggedInSection" style="display: none;">
+    <h2>Welcome, <span id="loggedInUsername"></span>!</h2>
+    <input type="password" id="newPassword" placeholder="New Password"><br>
+    <button onclick="changePassword()">Change Password</button>
+    <button onclick="logout()">Logout</button>
+    <p id="passwordChangeMessage"></p>
+  </div>
+  
+  <script>
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      
+      // Simulated authentication logic
+      if (username === "defaultuser" && password === "defaultpassword") {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("loggedInSection").style.display = "block";
+        document.getElementById("loggedInUsername").textContent = username;
+      } else {
+        alert("Invalid username or password.");
+      }
+    }
+    
+    function changePassword() {
+      var newPassword = document.getElementById("newPassword").value;
+      
+      // Simulated password change logic
+      if (newPassword !== "") {
+        document.getElementById("passwordChangeMessage").textContent = "Password changed successfully!";
+        document.getElementById("newPassword").value = "";
+      } else {
+        alert("Please enter a new password.");
+      }
+    }
+    
+    function logout() {
+      document.getElementById("loginForm").style.display = "block";
+      document.getElementById("loggedInSection").style.display = "none";
+      document.getElementById("passwordChangeMessage").textContent = "";
+    }
+  </script>
+</body>
+</html>
