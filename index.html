@@ -68,6 +68,8 @@
         document.getElementById("loginForm").style.display = "none";
         document.getElementById("loggedInSection").style.display = "block";
         document.getElementById("loggedInUsername").textContent = username;
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
       } else {
         alert("Invalid username or password.");
       }
